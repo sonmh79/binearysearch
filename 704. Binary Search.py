@@ -3,7 +3,7 @@ class Solution:
         # 1. 이진 검색 재귀 풀이
         def binarysearch(left,right):
             if left <= right:
-                mid = (left+right) // 2
+                mid = left + (right-left)//2  # overflow를 피하면서 정확한 중간값 구하기
                 
                 if nums[mid] > target:
                     return binarysearch(left,mid-1)
